@@ -13,8 +13,8 @@ a<-NULL
 res<-NULL
 for (i in 0:24){
   a<-c(rep(FALSE,i),LFS.sampling,rep(FALSE,24-i))
-  print(a)
-  print(length(a))
+  #print(a)
+  #print(length(a))
   res<-rbind(res,a)
 }
 
@@ -24,7 +24,7 @@ sel.res<-res[,6:25]
 dim(sel.res)
 head(sel.res)
 LFS<-as.vector(t(sel.res))
-AD<-c(rep(TRUE,length(col.LFS)))
+AD<-c(rep(TRUE,length(LFS)))
 data.miss<-cbind(LFS,AD)
 
 # to increase the number of indivuals 
@@ -37,3 +37,8 @@ for (i in 1:(times-1)){
 }
 dim(data.miss.tot)
 
+head(data.miss.tot)
+dim(data.miss.tot)
+
+## how are the subject ids? 
+## how can I modify this to decrease the proportion of missing?
